@@ -9,14 +9,11 @@
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/47e549ce-b3ec-4aa3-92fe-f0d454047975" alt="Pinned Tab" />
+  <img src="https://github.com/user-attachments/assets/cd4b7dc2-e29c-490e-b72b-0301bc0bb85b" alt="ContextMenu" />
 </p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/2695b969-1869-4741-b24b-1205eef9eb53" alt=ContextMenu" />
+  <img src="https://github.com/user-attachments/assets/add4fb74-e481-4b5b-b07c-151989fdfdd9" alt="ContextMenu1" />
 </p>
-<p align="center">  
-  <img src="https://github.com/user-attachments/assets/32402de4-382f-42dc-8033-c678dd0f8f92" alt="ContextMenu1" />
-</p>
-<p align="center">  
-  <img src="https://github.com/user-attachments/assets/c928372c-9f4d-4ee1-9549-c96c352036fb" alt="ContextMenu2" />
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3d8f839f-8d41-48cf-808e-4eedea843c95" alt="ContextMenu2" />
 </p>
