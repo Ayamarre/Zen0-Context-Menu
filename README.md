@@ -9,7 +9,9 @@
 </p>
 
 ## Pinned Tab
-![PinnedTab](https://github.com/user-attachments/assets/47e549ce-b3ec-4aa3-92fe-f0d454047975)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/47e549ce-b3ec-4aa3-92fe-f0d454047975" alt="Pinned Tab" />
+</p>
 
 ## Download Panel
 ![DownloadPanel](https://github.com/user-attachments/assets/cae20562-dd53-4a07-9dfc-e25932f1c06f)
