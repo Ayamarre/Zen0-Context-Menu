@@ -1,7 +1,7 @@
 /* >> Zen0 - Context Menu
  * >> CSS Style to match your theme for Menu, Context Menu, Toolbar, Download Panel
- * >> Crédit: FF-ULTIMA, Zer0, Naёzr⁴², KiKaraage, Raysin, Tanay-Kar
- * >> Version: 1.12.8b – 2025-05-25
+ * >> Crédit: FF-ULTIMA, Zer0, Ferrocyante, KiKaraage, Raysin, Tanay-Kar
+ * >> Version: 1.12.9b - 2025-05-31
  * >> Author: Fluntek
  */
 
@@ -13,8 +13,8 @@ menu, menuitem,
   text-underline-offset: 10000px !important;
 }
 
-
-menupopup, panel, customization-container {
+menupopup, panel, customization-container,
+#appMenu-popup {
   font-weight: bold !important;
   transform: scaleX(100.8%) !important;
   color-scheme: light dark;
@@ -24,77 +24,97 @@ menupopup, panel, customization-container {
   --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
 }
 
+/* Credit to Ferrocyante */
+#tabContextMenu:has(
+    #context_reloadTab:not([hidden])
+):has(
+    :is(#context_zen-add-essential, #context_zen-remove-essential):not([hidden])
+):has(
+    :is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])
+) {
+    :nth-child(1 of menuseparator) {
+        order: -1 !important;
+    }
 
-#unified-extensions-view {
-  margin-block: 2px !important;
-  min-height: 15px !important;
-  line-height: 15px !important;
+    #context_reloadTab,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinTab, #context_unpinTab),
+    #context_bookmarkTab {
+        order: -200 !important;
+        --tab-button-height: 50px;
+        width: 25% !important;
+        height: var(--tab-button-height) !important;
+        border-radius: 10px !important;
+        transition: background-color 100ms ease-in-out !important;   
+        background-position: center !important;
+    }
+
+    #context_zen-remove-essential {
+        margin-left: 37.5% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    #context_zen-add-essential {
+        margin-left: 50% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    :is(#context_pinTab, #context_unpinTab) {
+        margin-left: 25% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    #context_bookmarkTab {
+        margin-left: 75% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
 }
 
-#unified-extensions-view box.panel-header,
-#unified-extensions-description,
-#unified-extensions-messages-container,
-.unified-extensions-item-message-deck,
-toolbarseparator:not(panel toolbarseparator),
-panel toolbarseparator,
-menuseparator, menuseparator:first-of-type, menuseparator::before {
-  display: none !important;
-}
+
+:not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.unified-nav-current),
+
 
 #tabContextMenu {
-  --tab-button-count: 4;
-  --tab-menu-width: 230px;
-  --tab-button-gap: 4px;
-  --tab-initial-gap: calc(var(--tab-button-gap) - var(--panel-padding));
-  --tab-button-width: calc(
-    (var(--tab-menu-width) - 2 * (var(--panel-padding) + var(--panel-shadow-margin)) - 2 * var(--tab-initial-gap) + var(--tab-button-gap))
-    / var(--tab-button-count) - var(--tab-button-gap)
-  );
+  --tab-menu-width: 230px;  
   --tab-button-height: 50px;
   --tab-button-bg-color-hover: rgba(255, 255, 255, 0.17);
   --tab-button-bg-color-active: rgba(255, 255, 255, 0.27);
   --zen-appcontent-border: transparent 1px solid;
+  
   width: var(--tab-menu-width) !important;
+  background-image: var(--menu-image) !important;
 }
 
-#tabContextMenu:has(#context_unpinTab[hidden]):has(#context_pinTab[hidden ~= "true"]) {
-  --tab-button-count: 3 !important;
-}
-
-#tabContextMenu > * {
-  transition: background-color 250ms ease-in-out !important;
-  border-radius: 6px !important;
-}
-
-#context_reloadTab,
-#context_pinTab,
-#context_unpinTab,
-#context_zen-add-essential,
-#context_zen-remove-essential,
-#context_bookmarkTab {
-  width: var(--tab-button-width);
-  height: var(--tab-button-height);
-  border-radius: 10px !important;
+#context_reloadTab {
+  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/refresh.png?raw=true") !important;
+  background-repeat: no-repeat !important;
   background-position: center !important;
-  transition: background-color 100ms ease-in-out !important;
+  background-size: 18px 18px !important;
+}
+  
+
+#context_pinTab,
+#context_unpinTab {
+  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/pin.png?raw=true") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
 }
 
-#context_reloadTab:hover,
-#context_pinTab:hover,
-#context_unpinTab:hover,
-#context_zen-add-essential:hover,
-#context_zen-remove-essential:hover,
-#context_bookmarkTab:hover {
-  background-color: var(--tab-button-bg-color-hover) !important;
+#context_zen-add-essential,
+#context_zen-remove-essential {
+ --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/essential.png?raw=true") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
 }
 
-#context_reloadTab:active,
-#context_pinTab:active,
-#context_unpinTab:active,
-#context_zen-add-essential:active,
-#context_zen-remove-essential:active,
-#context_bookmarkTab:active {
-  background-color: var(--tab-button-bg-color-active) !important;
+
+#context_bookmarkTab {
+  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/bookmark2.png?raw=true") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;  
 }
 
 #context_reloadTab .menu-text,
@@ -106,38 +126,8 @@ menuseparator, menuseparator:first-of-type, menuseparator::before {
   display: none !important;
 }
 
-#context_reloadTab {
-  transform: translate(var(--tab-initial-gap), var(--tab-initial-gap));
-  order: -20;
-}
-
-#context_pinTab,
-#context_unpinTab {
-  transform: translate(calc(var(--tab-button-width) + var(--tab-button-gap) + var(--tab-initial-gap)), calc(var(--tab-initial-gap) - 30px));
-  margin: -20px 0 -30px;
-  order: -19;
-}
-
-#context_zen-add-essential,
-#context_zen-remove-essential {
-  transform: translate(calc((var(--tab-button-count) - 2) * (var(--tab-button-width) + var(--tab-button-gap)) + var(--tab-initial-gap)), calc(var(--tab-initial-gap) - 30px));
-  margin: -20px 0 -30px;
-  order: -18;
-}
-
-#context_bookmarkTab {
-  transform: translate(calc((var(--tab-button-count) - 1) * (var(--tab-button-width) + var(--tab-button-gap)) + var(--tab-initial-gap)), calc(var(--tab-initial-gap) - 30px));
-  margin: -20px 0 -30px;
-  order: -17;
-}
-
-#context_zen-add-essential {
-  display: inline !important;
-  visibility: visible !important;
-}
-
+/* Delete the line if you want to keep the context */
 #context_openANewTab,
-#pageAction-urlbar-copy-frame-url_jeffersonscher_com,
 #context-take-screenshot,
 #context-sep-screenshots,
 #frame-sep,
@@ -186,14 +176,39 @@ menuseparator, menuseparator:first-of-type, menuseparator::before {
   display: none !important;
 }
 
+#unified-extensions-view box.panel-header,
+#unified-extensions-description,
+#unified-extensions-messages-container,
+.unified-extensions-item-message-deck,
+toolbarseparator:not(panel toolbarseparator),
+panel toolbarseparator,
+menuseparator, menuseparator:first-of-type, menuseparator::before {
+  display: none !important;
+}
+#context_reloadTab:hover,
+#context_pinTab:hover,
+#context_unpinTab:hover,
+#context_zen-add-essential:hover,
+#context_zen-remove-essential:hover,
+#context_bookmarkTab:hover {
+  background-color: var(--tab-button-bg-color-hover) !important;
+}
+
+#context_reloadTab:active,
+#context_pinTab:active,
+#context_unpinTab:active,
+#context_zen-add-essential:active,
+#context_zen-remove-essential:active,
+#context_bookmarkTab:active {
+  background-color: var(--tab-button-bg-color-active) !important;
+}
+
 menupopup > menuitem:not(#context_reloadTab):not(#context_pinTab):not(#context_unpinTab):not(#context_zen-add-essential):not(#context_zen-remove-essential):not(#context_bookmarkTab),
 menupopup > menu:not(#context_reloadTab):not(#context_pinTab):not(#context_unpinTab):not(#context_zen-add-essential):not(#context_zen-remove-essential):not(#context_bookmarkTab) {
   margin-block: 2px !important;
   min-height: 20px !important;
   line-height: 20px !important;
-  border-radius: 8px !important;
 }
-
 #customization-container {
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -264,26 +279,26 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
 #appMenu-zoom-controls {
   border-top: none !important;
     
-    & #appMenu-fullscreen-button2::before {
-  content: none !important;
-    } 
+  & #appMenu-fullscreen-button2::before {
+    content: none !important;
+  } 
 }
 
 #downloadsPanel {
-    font-weight: bold !important;
-    color-scheme: light dark;
-    --panel-background: var(--uc-context-menu) !important;
-    --panel-border-radius: var(--uc-all-border-radius) !important;
-    --panel-border-color: var(--uc-panel-border-ii) !important;
-    --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
+  font-weight: bold !important;
+  color-scheme: light dark;
+  --panel-background: var(--uc-context-menu) !important;
+  --panel-border-radius: var(--uc-all-border-radius) !important;
+  --panel-border-color: var(--uc-panel-border-ii) !important;
+  --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
 }
 
-#downloadsFooterButtons > toolbarseparator{
+#downloadsFooterButtons > toolbarseparator {
   display: none !important;
 }
 
 .downloadButton {
-    min-width: 40px !important;
+  min-width: 40px !important;
 }
 
 #downloadsListBox {
@@ -319,8 +334,8 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
   font-weight: 600 !important;
   font-size: 14px !important;
 }
-
-.subviewbutton {
+#unified-extensions-view {
   margin-block: 2px !important;
-  min-height: 35px !important;
+  min-height: 15px !important;
+  line-height: 15px !important;
 }
