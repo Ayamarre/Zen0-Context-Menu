@@ -1,22 +1,17 @@
 /* >> Zen0 - Context Menu
  * >> CSS Style to match your theme for Menu, Context Menu, Toolbar, Download Panel
- * >> Crédit: FF-ULTIMA, Zer0, Ferrocyante, KiKaraage, Raysin, Tanay-Kar
- * >> Version: 1.12.9b - 2025-05-31
+ * >> Credit: FF-ULTIMA, Zer0, Ferrocyante, KiKaraage, Raysin, Tanay-Kar
+ * >> Version: 1.12.9b - 2025-06-01
  * >> Author: Fluntek
  */
 
-menu, menuitem,
-#downloadsHistory,
-#PanelUI-helpItems,
-#customization-container,
-#unified-extensions-view {
-  text-underline-offset: 10000px !important;
-}
-
-menupopup, panel, customization-container,
-#appMenu-popup {
+menupopup,
+panel,
+customization-container,
+#appMenu-popup,
+#unified-extensions-panel {
   font-weight: bold !important;
-  transform: scaleX(100.8%) !important;
+  transform: scaleX(1.008) !important;
   color-scheme: light dark;
   --panel-background: var(--uc-context-menu) !important;
   --panel-border-radius: var(--uc-all-border-radius) !important;
@@ -24,110 +19,26 @@ menupopup, panel, customization-container,
   --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
 }
 
-/* Credit to Ferrocyante */
-#tabContextMenu:has(
-    #context_reloadTab:not([hidden])
-):has(
-    :is(#context_zen-add-essential, #context_zen-remove-essential):not([hidden])
-):has(
-    :is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])
-) {
-    :nth-child(1 of menuseparator) {
-        order: -1 !important;
-    }
-
-    #context_reloadTab,
-    :is(#context_zen-add-essential, #context_zen-remove-essential),
-    :is(#context_pinTab, #context_unpinTab),
-    #context_bookmarkTab {
-        order: -200 !important;
-        --tab-button-height: 50px;
-        width: 25% !important;
-        height: var(--tab-button-height) !important;
-        border-radius: 10px !important;
-        transition: background-color 100ms ease-in-out !important;   
-        background-position: center !important;
-    }
-
-    #context_zen-remove-essential {
-        margin-left: 37.5% !important;
-        margin-top: calc(0px - var(--tab-button-height)) !important;
-    }
-
-    #context_zen-add-essential {
-        margin-left: 50% !important;
-        margin-top: calc(0px - var(--tab-button-height)) !important;
-    }
-
-    :is(#context_pinTab, #context_unpinTab) {
-        margin-left: 25% !important;
-        margin-top: calc(0px - var(--tab-button-height)) !important;
-    }
-
-    #context_bookmarkTab {
-        margin-left: 75% !important;
-        margin-top: calc(0px - var(--tab-button-height)) !important;
-    }
+menuitem,
+menu {
+  color: var(--item-color) !important;
+  border-radius: 8px !important;
+  padding: 10px 10px 10px 7px !important;*/
+  font-size: 13px !important;
 }
 
-
-:not(:not(menubar) > menu, #ContentSelectDropdown) > menupopup > menuitem:not(.unified-nav-current),
-
-
-#tabContextMenu {
-  --tab-menu-width: 230px;  
-  --tab-button-height: 50px;
-  --tab-button-bg-color-hover: rgba(255, 255, 255, 0.17);
-  --tab-button-bg-color-active: rgba(255, 255, 255, 0.27);
-  --zen-appcontent-border: transparent 1px solid;
-  
-  width: var(--tab-menu-width) !important;
-  background-image: var(--menu-image) !important;
-}
-
-#context_reloadTab {
-  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/refresh.png?raw=true") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;
-}
-  
-
-#context_pinTab,
-#context_unpinTab {
-  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/pin.png?raw=true") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;
-}
-
-#context_zen-add-essential,
-#context_zen-remove-essential {
- --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/essential.png?raw=true") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;
-}
-
-
-#context_bookmarkTab {
-  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/bookmark2.png?raw=true") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 18px 18px !important;  
-}
-
-#context_reloadTab .menu-text,
-#context_pinTab .menu-text,
-#context_unpinTab .menu-text,
-#context_zen-add-essential .menu-text,
-#context_zen-remove-essential .menu-text,
-#context_bookmarkTab .menu-text {
+menuseparator {
   display: none !important;
 }
 
-/* Delete the line if you want to keep the context */
+
+#context-openlink,
+#context-media-playbackrate,
+#context-video-pictureinpicture,
+#context-video-saveimage,
+#context-sendvideo,
 #context_openANewTab,
+#pageAction-urlbar-copy-frame-url_jeffersonscher_com,
 #context-take-screenshot,
 #context-sep-screenshots,
 #frame-sep,
@@ -175,6 +86,133 @@ menupopup, panel, customization-container,
 #context_playSelectedTabs {
   display: none !important;
 }
+menu, menuitem,
+#downloadsHistory,
+#PanelUI-helpItems,
+#customization-container,
+#unified-extensions-view {
+  text-underline-offset: 10000px !important;
+}
+
+/* Credit to Ferrocyante */
+#tabContextMenu:has(
+    #context_reloadTab:not([hidden])
+):has(
+    :is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])
+) {
+    :nth-child(1 of menuseparator) {
+        order: 1 !important;
+    }
+
+    #context_reloadTab,
+    :is(#context_zen-add-essential, #context_zen-remove-essential),
+    :is(#context_pinTab, #context_unpinTab),
+    #context_bookmarkTab {
+        order: -10 !important;
+        --tab-button-height: 50px;
+        width: 25% !important;
+        height: var(--tab-button-height) !important;
+        border-radius: 8px !important;     
+    }
+
+    #context_reloadTab .menu-text,
+    #context_zen-add-essential .menu-text,
+    #context_zen-remove-essential .menu-text,
+    #context_pinTab .menu-text,
+    #context_unpinTab .menu-text,
+    #context_bookmarkTab .menu-text {
+        display: none !important;
+    }
+
+    #context_zen-remove-essential {
+        margin-left: 37.5% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    #context_zen-add-essential {
+        margin-left: 50% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    :is(#context_pinTab, #context_unpinTab) {
+        margin-left: 25% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+
+    #context_bookmarkTab {
+        margin-left: 75% !important;
+        margin-top: calc(0px - var(--tab-button-height)) !important;
+    }
+}
+#tabContextMenu:has(
+  #context_reloadTab:not([hidden])
+):has(
+  :is(#context_pinTab, #context_unpinTab, #context_bookmarkTab):not([hidden])
+):not(
+  :has(:is(#context_zen-add-essential, #context_zen-remove-essential):not([hidden]))
+) {
+  #context_reloadTab,
+  :is(#context_pinTab, #context_unpinTab),
+  #context_bookmarkTab {
+    width: 33.33% !important;
+  }
+
+  #context_reloadTab {
+    margin-left: 0% !important;
+  }
+
+  :is(#context_pinTab, #context_unpinTab) {
+    margin-left: 33.33% !important;
+  }
+
+  #context_bookmarkTab {
+    margin-left: 66.66% !important;
+  }
+}
+  
+:not(:not(menubar) > menu, 
+#ContentSelectDropdown) > menupopup > menuitem:not(.unified-nav-current),
+#tabContextMenu {
+  background-image: var(--menu-image) !important;
+}
+
+menupopup {
+  width: 230px !important;
+}
+
+#context_reloadTab {
+  --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+}
+
+
+#context_pinTab,
+#context_unpinTab {
+  --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4'/%3E%3Cpath d='M9 15l-4.5 4.5'/%3E%3Cpath d='M14.5 4l5.5 5.5'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 18px 18px !important;
+}
+
+
+#context_zen-add-essential,
+#context_zen-remove-essential {
+  --menu-image: url("https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Icons/essential.png?raw=true") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important;
+}
+
+
+#context_bookmarkTab {
+  --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 16px 16px !important; 
+}
+
 
 #unified-extensions-view box.panel-header,
 #unified-extensions-description,
@@ -185,30 +223,7 @@ panel toolbarseparator,
 menuseparator, menuseparator:first-of-type, menuseparator::before {
   display: none !important;
 }
-#context_reloadTab:hover,
-#context_pinTab:hover,
-#context_unpinTab:hover,
-#context_zen-add-essential:hover,
-#context_zen-remove-essential:hover,
-#context_bookmarkTab:hover {
-  background-color: var(--tab-button-bg-color-hover) !important;
-}
 
-#context_reloadTab:active,
-#context_pinTab:active,
-#context_unpinTab:active,
-#context_zen-add-essential:active,
-#context_zen-remove-essential:active,
-#context_bookmarkTab:active {
-  background-color: var(--tab-button-bg-color-active) !important;
-}
-
-menupopup > menuitem:not(#context_reloadTab):not(#context_pinTab):not(#context_unpinTab):not(#context_zen-add-essential):not(#context_zen-remove-essential):not(#context_bookmarkTab),
-menupopup > menu:not(#context_reloadTab):not(#context_pinTab):not(#context_unpinTab):not(#context_zen-add-essential):not(#context_zen-remove-essential):not(#context_bookmarkTab) {
-  margin-block: 2px !important;
-  min-height: 20px !important;
-  line-height: 20px !important;
-}
 #customization-container {
   font-size: 14px !important;
   font-weight: 700 !important;
@@ -330,12 +345,10 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
   font-weight: 600 !important;
 }
 
-.footer-button {
-  font-weight: 600 !important;
-  font-size: 14px !important;
-}
 #unified-extensions-view {
   margin-block: 2px !important;
   min-height: 15px !important;
   line-height: 15px !important;
 }
+
+menupopup:has(#context_reloadTab):has(#context_pinTab) {
