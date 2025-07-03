@@ -5,7 +5,7 @@
   "homepage": "https://github.com/Ayamarre/Zen0-Context-Menu",
   "readme": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/README.md",
   "image": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/Icons/ContextMenu.png",
-  "style": "https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Zen0%20-%20ContextMenu.css",
+  "style": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/userChrome.css",
   "author": "Ayamarre",
   "version": "1.0.0",
   "tags": [
