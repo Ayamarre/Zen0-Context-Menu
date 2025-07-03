@@ -1,0 +1,19 @@
+{
+  "id": "zen0-context-menu",
+  "name": "Zen0 Context Menu",
+  "description": "Context Menu that match with your theme",
+  "homepage": "https://github.com/Ayamarre/Zen0-Context-Menu",
+  "readme": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/README.md",
+  "image": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/Icons/ContextMenu.png",
+  "style": "https://github.com/Ayamarre/Zen0-Context-Menu/blob/main/Zen0%20-%20ContextMenu.css",
+  "author": "Ayamarre",
+  "version": "1.0.0",
+  "tags": [
+    "sine",
+    "fx-autoconfig",
+    "Context Menu"
+  ],
+  "createdAt": "2025-07-04",
+  "updatedAt": "2025-07-04",
+  "fork": ["zen"]
+}
