@@ -1,7 +1,7 @@
 /* >> Zen0 - Context Menu
  * >> CSS Style to match your theme for Menu, Context Menu, Toolbar, Download Panel
  * >> Credit: FF-ULTIMA, Zer0, Ferrocyante, KiKaraage, Raysin, Tanay-Kar
- * >> Version: 1.12.10b - 2025-06-02
+ * >> Version: 1.14.5b - 2025-07-23
  * >> Author: Fluntek
  */
 
@@ -16,7 +16,7 @@ customization-container,
   --panel-background: var(--uc-context-menu) !important;
   --panel-border-radius: var(--uc-all-border-radius) !important;
   --panel-border-color: var(--uc-panel-border-ii) !important;
-  --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
+  --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2) !important;
 }
 
 menuitem,
@@ -29,69 +29,6 @@ menu {
 
 menuseparator {
   display: none !important;
-}
-
-
-#context-openlink,
-#context-media-playbackrate,
-#context-video-pictureinpicture,
-#context-video-saveimage,
-#context-sendvideo,
-#context_openANewTab,
-#pageAction-urlbar-copy-frame-url_jeffersonscher_com,
-#context-take-screenshot,
-#context-sep-screenshots,
-#frame-sep,
-#context-savepage,
-#context-viewsource,
-#context-inspect-a11y,
-#context-inspect,
-#inspect-separator,
-#context-media-eme-separator,
-#context-viewpartialsource-selection,
-#context_duplicateTab,
-#context_duplicateTabs,
-#context_selectAllTabs,
-#context_selectedAllTabs,
-#toolbar-context-selectAllTabs,
-#context-selectall,
-#context-sep-selectall,
-#spell-separator,
-#spell-check-enabled,
-#spell-add-dictionaries-main,
-#spell-dictionaries,
-#context-sep-bidi,
-#context-bidi-text-direction-toggle,
-#context-bidi-page-direction-toggle,
-#context-sendimage,
-#context-sep-setbackground,
-#context-setDesktopBackground,
-#context-sep-sharing,
-#context-viewimageinfo,
-#context-print-selection,
-#context-searchselect-private,
-#context_closeTab,
-#context_closeDuplicateTabs,
-#context_closeTabOptions,
-#context_sendTabToDevice,
-#context-sendpagetodevice,
-#context-sendlinktodevice,
-#context_reopenInContainer,
-#context-openlinkinusercontext-menu,
-#context_moveTabOptions,
-#context-zenAddToWebPanel,
-#context_toggleMuteTab,
-#context_toggleMuteSelectedTabs,
-#context_playTab,
-#context_playSelectedTabs {
-  display: none !important;
-}
-menu, menuitem,
-#downloadsHistory,
-#PanelUI-helpItems,
-#customization-container,
-#unified-extensions-view {
-  text-underline-offset: 10000px !important;
 }
 
 /* Credit to Ferrocyante */
@@ -112,7 +49,7 @@ menu, menuitem,
         --tab-button-height: 50px;
         width: 25% !important;
         height: var(--tab-button-height) !important;
-        border-radius: 8px !important;     
+        border-radius: 8px !important;
     }
 
     #context_reloadTab .menu-text,
@@ -205,12 +142,113 @@ menupopup {
 }
 
 
+
 #context_bookmarkTab {
   --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z'/%3E%3C/svg%3E") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important; 
 }
+
+#context_unloadTab {
+  order: -2 !important;
+}
+
+#context_ungroupTab {
+  order: -1 !important;
+}
+
+#context-media-play,
+#context-media-mute,
+#context-media-loop,
+#context-video-fullscreen,
+#context-bookmarklink,
+#context-stripOnShareLink,
+#context-openlinkprivate,
+#_036a55b4-5e72-4d05-a06c-cba2dfcc134a_-menuitem-_translate-web-page,
+#text-action-redo,
+#text-action-undo,
+#context-openlink,
+#context-media-playbackrate,
+#context-video-pictureinpicture,
+#context-video-saveimage,
+#context-sendvideo,
+#context_openANewTab,
+#pageAction-urlbar-copy-frame-url_jeffersonscher_com,
+#context-take-screenshot,
+#context-sep-screenshots,
+#frame-sep,
+#context-savepage,
+#context-viewsource,
+#context-inspect-a11y,
+#context-inspect,
+#inspect-separator,
+#context-media-eme-separator,
+#context-viewpartialsource-selection,
+#context_duplicateTab,
+#context_duplicateTabs,
+#context_selectAllTabs,
+#context_selectedAllTabs,
+#toolbar-context-selectAllTabs,
+#context-selectall,
+#context-sep-selectall,
+#spell-separator,
+#spell-check-enabled,
+#spell-add-dictionaries-main,
+#spell-dictionaries,
+#context-sep-bidi,
+#context-bidi-text-direction-toggle,
+#context-bidi-page-direction-toggle,
+#context-sendimage,
+#context-sep-setbackground,
+#context-setDesktopBackground,
+#context-sep-sharing,
+#context-viewimageinfo,
+#context-print-selection,
+#context-searchselect-private,
+#context_closeTab,
+#context_closeDuplicateTabs,
+#context_closeTabOptions,
+#context_sendTabToDevice,
+#context-sendpagetodevice,
+#context-sendlinktodevice,
+#context_reopenInContainer,
+#context-openlinkinusercontext-menu,
+#context_moveTabOptions,
+#context-zenAddToWebPanel,
+#context_toggleMuteTab,
+#context_toggleMuteSelectedTabs,
+#context_playTab,
+#context_playSelectedTabs {
+  display: none !important;
+}
+
+menuitem[data-l10n-id="text-action-undo"],
+menuitem[data-l10n-id="text-action-delete"],
+menuitem[data-l10n-id="text-action-paste-no-formatting"],
+menuitem[data-l10n-id="text-action-redo"],
+menuitem[data-l10n-id="text-action-select-all"],
+menuitem[cmd="cmd_delete"] {
+  display: none !important;
+}
+
+#_036a55b4-5e72-4d05-a06c-cba2dfcc134a_-menuitem-_translate-selected-text:hover {
+  background-color: rgb(0, 120, 255, 0.1) !important;
+}
+
+#_2e5ff8c8-32fe-46d0-9fc8-6b8986621f3c_-menuitem-1:hover {
+  background-color: rgb(255, 0, 0, 0.1) !important;
+}
+
+
+menu, menuitem,
+#downloadsHistory,
+#PanelUI-helpItems,
+#customization-container,
+#unified-extensions-view {
+  text-underline-offset: 10000px !important;
+}
+
 
 
 #unified-extensions-view box.panel-header,
@@ -350,4 +388,42 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
   line-height: 15px !important;
 }
 
-menupopup:has(#context_reloadTab):has(#context_pinTab) {
+/* Context menu styling */
+#tabContextMenu,
+#contentAreaContextMenu,
+#toolbar-context-menu {
+  slot::before {
+    height: 50px !important;
+    width: 50px !important;
+    background-color: red !important;
+  }
+      --menuitem-padding: 3px !important;
+}
+  
+menuitem {
+  transition: all 0.2s ease-in-out !important;
+}
+  
+[hasbeenopened="true"] {
+  menuitem,
+  menu {
+    .menu-text {
+      font-size: 0.93em !important;
+      padding: 2px 5px !important;
+      opacity: 1 !important;
+      transition: all 0.2s ease-in-out !important;
+    }
+  
+    &:hover > .menu-text {
+      padding-left: 8px !important;
+      padding-right: 2px !important;
+    }
+  }
+  
+  &:has(menu[open="true"]) {
+    & > menuitem,
+    menu:not([open="true"]) {
+      opacity: 0.3 !important;
+    }
+  }
+}
