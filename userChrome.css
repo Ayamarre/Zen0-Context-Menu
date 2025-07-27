@@ -1,37 +1,34 @@
 /* >> Zen0 - Context Menu
  * >> CSS Style to match your theme for Menu, Context Menu, Toolbar, Download Panel
  * >> Credit: FF-ULTIMA, Zer0, Ferrocyante, KiKaraage, Raysin, Tanay-Kar
- * >> Version: 1.14.5b - 2025-07-23
+ * >> Version: 1.14.8b - 2025-07-27
  * >> Author: Fluntek
  */
 
-menupopup,
-panel,
-customization-container,
-#appMenu-popup,
-#unified-extensions-panel {
-  font-weight: bold !important;
-  transform: scaleX(1.008) !important;
-  color-scheme: light dark;
-  --panel-background: var(--uc-context-menu) !important;
-  --panel-border-radius: var(--uc-all-border-radius) !important;
-  --panel-border-color: var(--uc-panel-border-ii) !important;
-  --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2) !important;
+@media (-moz-windows-mica-popups) {
+  menupopup, panel, .tab-group-label-container,
+  #mainPopupSet {
+    --panel-background: var(--uc-context-menu) !important;
+  }
 }
 
 menuitem,
 menu {
   color: var(--item-color) !important;
   border-radius: 8px !important;
-  padding: 10px 10px 10px 7px !important;*/
+  padding: 10px 10px 10px 7px !important;
   font-size: 13px !important;
 }
 
+#unified-extensions-view box.panel-header,
+#unified-extensions-description,
+#unified-extensions-messages-container,
+.unified-extensions-item-message-deck,
+toolbarseparator,
 menuseparator {
   display: none !important;
 }
 
-/* Credit to Ferrocyante */
 #tabContextMenu:has(
     #context_reloadTab:not([hidden])
 ):has(
@@ -46,10 +43,11 @@ menuseparator {
     :is(#context_pinTab, #context_unpinTab),
     #context_bookmarkTab {
         order: -10 !important;
-        --tab-button-height: 50px;
         width: 25% !important;
         height: var(--tab-button-height) !important;
         border-radius: 8px !important;
+      
+        --tab-button-height: 50px;
     }
 
     #context_reloadTab .menu-text,
@@ -113,12 +111,13 @@ menuseparator {
   background-image: var(--menu-image) !important;
 }
 
-menupopup {
+#tabContextMenu {
   width: 230px !important;
 }
 
 #context_reloadTab {
   --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99'/%3E%3C/svg%3E") !important;
+  
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important;
@@ -128,6 +127,7 @@ menupopup {
 #context_pinTab,
 #context_unpinTab {
   --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15 4.5l-4 4l-4 1.5l-1.5 1.5l7 7l1.5 -1.5l1.5 -4l4 -4'/%3E%3Cpath d='M9 15l-4.5 4.5'/%3E%3Cpath d='M14.5 4l5.5 5.5'/%3E%3C/svg%3E") !important;
+  
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 18px 18px !important;
@@ -137,6 +137,7 @@ menupopup {
 #context_zen-add-essential,
 #context_zen-remove-essential {
   --menu-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 20 20'><g transform='translate(1,1)' stroke-linecap='round' stroke-width='1.5' fill='none' stroke='white' stroke-linejoin='round'><path d='M8.743,7.769l-.946-.315-.316-.947c-.102-.306-.609-.306-.711,0l-.316,.947-.946,.315c-.153,.051-.257,.194-.257,.356s.104,.305.257,.356l.946,.315.316,.947c.051,.153.194,.256.355,.256s.305-.104.355-.256l.316-.947.946-.315c.153-.051.257-.194.257-.356s-.104-.305-.257-.356Z' fill='white' stroke='none'/><path d='M15.144,9.976c.52-.995.856-2.117.856-3.367.008-2.12-1.704-3.846-3.826-3.859-1.277.016-2.464.66-3.174 1.72-.709-1.061-1.896-1.704-3.173-1.72-2.123.013-3.834 1.739-3.826 3.859 0 4.826 4.959 7.794 6.529 8.613.297.155.644.155.941 0 .114-.059.249-.133.395-.214'/><path d='M15.658,12.99l-1.263-.421-.421-1.263c-.137-.408-.812-.408-.949 0l-.421 1.263-1.263.421c-.204.068-.342.259-.342.474s.138.406.342.474l1.263.421.421 1.263c.068.204.26.342.475.342s.406-.138.475-.342l.421-1.263 1.263-.421c.204-.068.342-.259.342-.474s-.138-.406-.342-.474Z' fill='white' stroke='none'/><circle cx='12.25' cy='6.25' r='.75' fill='white' stroke='none'/></g><path d='M10.4965 16.8028L16.7408 10.4994C18.4252 8.78856 18.4199 6.02549 16.7239 4.31249C15.0611 2.63292 12.3961 2.5895 10.6978 4.19086C10.6612 4.22539 10.6251 4.26068 10.5894 4.29673L9.99299 4.90026L9.38843 4.28963C9.35529 4.25616 9.32175 4.22333 9.28783 4.19116C7.58595 2.57726 4.91654 2.60193 3.26122 4.2739C1.5729 5.9792 1.58114 8.75004 3.27679 10.4627L9.55368 16.8028C9.81404 17.0657 10.2362 17.0657 10.4965 16.8028ZM11.3 5.00029C12.5964 3.69135 14.7025 3.69204 16.0133 5.01604C17.3253 6.34123 17.3272 8.47734 16.0292 9.79681L16.0282 9.79783L10.0252 15.8577L3.98743 9.75919C2.67408 8.43263 2.67286 6.28953 3.97185 4.97746C5.26525 3.67106 7.36984 3.67208 8.6778 4.99319L9.63801 5.96306C9.8338 6.16082 10.1534 6.16067 10.349 5.96272L11.3 5.00029Z' fill='white'/></svg>") !important;
+  
   background-repeat: no-repeat, no-repeat !important;
   background-position: center, center !important;  
 }
@@ -145,6 +146,7 @@ menupopup {
 
 #context_bookmarkTab {
   --menu-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='2' stroke='%23ffffff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z'/%3E%3C/svg%3E") !important;
+  
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 16px 16px !important; 
@@ -240,25 +242,12 @@ menuitem[cmd="cmd_delete"] {
   background-color: rgb(255, 0, 0, 0.1) !important;
 }
 
-
 menu, menuitem,
 #downloadsHistory,
 #PanelUI-helpItems,
 #customization-container,
 #unified-extensions-view {
   text-underline-offset: 10000px !important;
-}
-
-
-
-#unified-extensions-view box.panel-header,
-#unified-extensions-description,
-#unified-extensions-messages-container,
-.unified-extensions-item-message-deck,
-toolbarseparator:not(panel toolbarseparator),
-panel toolbarseparator,
-menuseparator, menuseparator:first-of-type, menuseparator::before {
-  display: none !important;
 }
 
 #customization-container {
@@ -272,10 +261,9 @@ menuseparator, menuseparator:first-of-type, menuseparator::before {
   z-index: 1;
   height: 43% !important;
   width: 36% !important;
-  backdrop-filter: blur(35px) saturate(130%) brightness(1.2) !important;
-  background: light-dark(rgba(255, 255, 255, 1), rgba(15, 15, 15, 0.1)) !important;
+  backdrop-filter: brightness(1) !important;
+  background: var(--uc-context-menu) !important;
   border-radius: 20px !important;
-  background-blend-mode: exclusion !important;
   box-shadow:
     0px 2px 26px -4px rgba(0, 0, 0, 0.90),
     inset 0px 0px 5px -2.5px rgba(255, 255, 255, 1) !important;
@@ -336,43 +324,8 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
   } 
 }
 
-#downloadsPanel {
-  font-weight: bold !important;
-  color-scheme: light dark;
-  --panel-background: var(--uc-context-menu) !important;
-  --panel-border-radius: var(--uc-all-border-radius) !important;
-  --panel-border-color: var(--uc-panel-border-ii) !important;
-  --panel-shadow: 0 0 var(--panel-shadow-margin) hsla(0,0%,0%,.2);
-}
-
-#downloadsFooterButtons > toolbarseparator {
-  display: none !important;
-}
-
 .downloadButton {
   min-width: 40px !important;
-}
-
-#downloadsListBox {
-  font-weight: 600 !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  flex-direction: row !important;
-  gap: 2px !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  scrollbar-width: none !important;
-  box-sizing: border-box !important;
-}
-
-#downloadsListBox > richlistitem {
-  flex: 1 1 calc(50% - 10px) !important;
-  min-width: 100px !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  color-scheme: light dark;
 }
 
 #downloadsHistory {
@@ -382,13 +335,7 @@ tab-group[split-view-group] > .tabbrowser-tab:not(:last-child)::after {
   font-weight: 600 !important;
 }
 
-#unified-extensions-view {
-  margin-block: 2px !important;
-  min-height: 15px !important;
-  line-height: 15px !important;
-}
 
-/* Context menu styling */
 #tabContextMenu,
 #contentAreaContextMenu,
 #toolbar-context-menu {
@@ -426,4 +373,33 @@ menuitem {
       opacity: 0.3 !important;
     }
   }
+}
+
+#unified-extensions-panel #unified-extensions-view {
+  width: 100% !important;
+}
+
+#unified-extensions-view {
+  --uei-icon-size: 20px;
+  --extensions-in-a-row: 3;
+}
+
+#unified-extensions-view .panel-header,
+#unified-extensions-view .panel-header + toolbarseparator,
+#unified-extensions-view .panel-subview-body + toolbarseparator,
+#unified-extensions-view .unified-extensions-item-menu-button.subviewbutton,
+#unified-extensions-view .unified-extensions-item-action-button .unified-extensions-item-contents {
+  display:none !important;
+}
+
+#unified-extensions-view #overflowed-extensions-list,
+#unified-extensions-view #unified-extensions-area,
+#unified-extensions-view .unified-extensions-list {
+  display: grid !important;
+  grid-template-columns: repeat(var(--extensions-in-a-row), auto);
+  justify-items: left !important;
+  align-items: left !important;
+}
+#unified-extensions-view {
+  padding: 3px !important;
 }
