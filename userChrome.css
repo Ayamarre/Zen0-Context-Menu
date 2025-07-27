@@ -8,6 +8,7 @@
 @media (-moz-windows-mica-popups) {
   menupopup, panel, .tab-group-label-container,
   #mainPopupSet {
+    font-weight: bold !important;
     --panel-background: var(--uc-context-menu) !important;
   }
 }
