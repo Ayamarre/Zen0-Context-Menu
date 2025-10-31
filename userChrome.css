@@ -27,13 +27,13 @@ menu {
   font-size: 13px !important;
 }
 
-#unified-extensions-view box.panel-header,
-#unified-extensions-description,
-#unified-extensions-messages-container,
-.unified-extensions-item-message-deck,
 toolbarseparator,
 menuseparator {
   display: none !important;
+}
+
+.pinned-tabs-container-separator > toolbarseparator {
+  display: -webkit-box !important;
 }
 
 #tabContextMenu {
