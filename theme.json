@@ -7,14 +7,15 @@
   "image": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/Icons/ContextMenu.png",
   "style": "https://raw.githubusercontent.com/Ayamarre/Zen0-Context-Menu/refs/heads/main/userChrome.css",
   "author": "Ayamarre",
-  "version": "1.17",
+  "version": "1.17.4b",
   "tags": [
     "sine",
     "fx-autoconfig",
     "Context Menu"
   ],
   "createdAt": "2025-07-04",
-  "updatedAt": "2025-10-23",
+  "updatedAt": "2025-10-31",
   "fork": ["zen"]
 }
+
 
