@@ -326,3 +326,7 @@ menuitem[data-l10n-id="text-action-select-all"],
 menuitem[cmd="cmd_delete"] {
   display: none !important;
 }
+
+#context_zen-add-essential[badge]::after {
+    display: none !important;
+}
